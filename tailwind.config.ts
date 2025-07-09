@@ -98,19 +98,31 @@ export default {
 				},
 				'hero-bg': {
 					'0%': {
-						transform: 'scale(1) translate(0, 0)'
+						transform: 'scale(1.2) translate(0, 0) rotate(0deg)'
+					},
+					'12.5%': {
+						transform: 'scale(1.25) translate(-3%, -2%) rotate(0.5deg)'
 					},
 					'25%': {
-						transform: 'scale(1.05) translate(-1%, -1%)'
+						transform: 'scale(1.3) translate(-5%, -3%) rotate(-0.3deg)'
+					},
+					'37.5%': {
+						transform: 'scale(1.28) translate(-2%, -5%) rotate(0.7deg)'
 					},
 					'50%': {
-						transform: 'scale(1.1) translate(1%, 1%)'
+						transform: 'scale(1.35) translate(3%, -4%) rotate(-0.2deg)'
+					},
+					'62.5%': {
+						transform: 'scale(1.32) translate(5%, -1%) rotate(0.4deg)'
 					},
 					'75%': {
-						transform: 'scale(1.05) translate(-0.5%, 0.5%)'
+						transform: 'scale(1.27) translate(2%, 2%) rotate(-0.6deg)'
+					},
+					'87.5%': {
+						transform: 'scale(1.24) translate(-1%, 1%) rotate(0.3deg)'
 					},
 					'100%': {
-						transform: 'scale(1) translate(0, 0)'
+						transform: 'scale(1.2) translate(0, 0) rotate(0deg)'
 					}
 				}
 			},
@@ -118,7 +130,7 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.8s ease-out',
-				'hero-bg': 'hero-bg 20s ease-in-out infinite'
+				'hero-bg': 'hero-bg 25s ease-in-out infinite'
 			}
 		}
 	},
