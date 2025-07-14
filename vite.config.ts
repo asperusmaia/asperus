@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // ===== A LINHA QUE VOCÊ PRECISA ADICIONAR É ESTA: =====
-  base: '/painel-cliente-final/', // Use o nome exato do seu novo repositório aqui
+  base: '/asperusmaia/', // Use o nome exato do seu novo repositório aqui
 
   server: {
     host: "::",
