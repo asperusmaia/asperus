@@ -1,24 +1,18 @@
-# Workflow simples para implantar conteúdo estático no GitHub Pages
-name: Deploy static content to Pages
+name: Deploy to GitHub Pages
 
 on:
-  # Roda toda vez que você faz uma alteração na branch `main`
   push:
     branches: ["main"]
-
-  # Permite que você rode este workflow manualmente na aba Actions
   workflow_dispatch:
 
-# Define as permissões que o robô precisa
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Permite apenas uma implantação de cada vez, cancelando as antigas
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -29,22 +23,29 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
+          
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+        
       - name: Build
-        run: npm run build # Este passo vai "assar o bolo" e criar a pasta 'dist'
+        run: npm run build
+        env:
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Sobe o conteúdo da pasta 'dist' (o bolo pronto)
           path: './dist'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
