@@ -33,7 +33,7 @@ jobs:
         # AQUI ESTÁ A MÁGICA FINAL - Nós passamos a variável que o seu vite.config.ts espera!
         run: npm run build
         env:
-          VITE_BASE_PATH: /asperusmaia/ # Usando o nome EXATO do seu repositório
+          VITE_BASE_PATH: /asperus/ # Usando o nome EXATO do seu repositório
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
