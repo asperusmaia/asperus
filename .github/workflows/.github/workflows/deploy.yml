@@ -1,0 +1,52 @@
+# Workflow para construir e implantar um site Vite no GitHub Pages
+name: Deploy Vite site to Pages
+
+on:
+  # Roda quando você faz uma alteração na branch `main`
+  push:
+    branches: ["main"]
+
+  # Permite que você rode este workflow manualmente na aba Actions
+  workflow_dispatch:
+
+# Define as permissões que o robô precisa
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  # Job de build
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+        env:
+          # CORREÇÃO FINAL: Usando o nome EXATO do seu repositório: 'asperus'
+          VITE_BASE_PATH: /asperus/
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  # Job de deploy
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
