@@ -32,7 +32,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # CORREÇÃO FINAL: Usando o nome EXATO do seu repositório: 'asperus'
+          # CORREÇÃO FINAL: Usando o nome EXATO do seu repositório: 'asperus' é foda
           VITE_BASE_PATH: /asperus/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
