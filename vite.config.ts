@@ -1,4 +1,4 @@
- // Se fuder caralho! porra tomar no cu
+ // Se fuder caralho! porra tomar no cu! foda-se
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
