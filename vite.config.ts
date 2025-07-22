@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // AQUI ESTÁ A LÓGICA CHAVE: Em produção, o caminho base será /asperus/
+  // AQUI ESTÁ A LÓGICA CHAVE: Em produção, o caminho base será /asperus/porra caralho
   base: mode === 'production' ? '/asperus/' : '/',
 
   server: {
