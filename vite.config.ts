@@ -4,9 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // AQUI ESTÁ A LÓGICA CHAVE: Em produção, o caminho base será /asperus/porra caralho
   base: mode === 'production' ? '/asperus/' : '/',
-
   server: {
     host: "::",
     port: 8080,
@@ -22,5 +20,6 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    sourcemap: true
   },
 }));
