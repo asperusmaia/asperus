@@ -23,7 +23,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-200 mb-8 font-light animate-fade-in">
-            Gestor de Automação Empresarial
+            Gestão de Automação para Negócios
           </p>
           
           <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in">
